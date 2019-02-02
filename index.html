@@ -1,0 +1,390 @@
+<!--
+    HTML 문서의 작성 순서
+    순서 1. 디자인에서 반응형 구조를 포함해서 전체적인 레이아웃 영역을 나눈다.
+    순서 2. 나누어진 레이아웃 영역을 문서의 논리적인 순서에 최대한 맞추어 CSS로 레이아웃 영역을 잡는다.
+    순서 3. 레이아웃 영역이 잡혔다면 콘텐츠를 다시 순서1과 순서2의 순서대로 작업한다.
+    순서 4. 세세한 스타일과 비주얼, 효과 등을 작업한다. 단, 순서 4의 경우 순서1과 순서2에서 작업이 가능하다면 미리 처리하여도 무방하다.
+
+    * 집을 지은 후 방은 꾸민다고 생각하자.
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="" />
+    <meta name="author" content="DevY" />
+    <meta name="apple-mobile-web-app-title" content="오뚜기" />
+    <title>오뚜기</title>
+    <meta name="description" content="오뚜기 메인화면" />
+<!--    <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body class="main">
+
+    <a href="#main" id="skip-nav">본문 바로가기</a>
+
+    <div class="wrap">
+
+        <header>
+            <nav class="sitemap">
+                <div class="container">
+                    <div class="sitemap-close">
+                        <a href="#"><img src="./img/btn_menu_cls.png" alt="상단메뉴 닫기" /></a>
+                    </div>
+
+                    <div class="sitemap-wrap">
+                        <div class="sitemap-depth1">
+                            <span><a href="#">회사소개</a></span>
+                            <dl class="sitemap-depth2">
+
+                                <dt><a href="#">(주) 오뚜기</a></dt>
+                                <dd><a href="#">- 오뚜기 소개</a></dd>
+                                <dd><a href="#">- 오뚜기 이념</a></dd>
+                                <dd><a href="#">- CI 소게</a></dd>
+
+                                <dt><a href="#">지속 가능 경영</a></dt>
+                                <dd><a href="#">- 사회공헌</a></dd>
+                                <dd><a href="#">- 환경경영</a></dd>
+                                <dd><a href="#">- 윤리경영</a></dd>
+                                <dd><a href="#">- 지배구조</a></dd>
+
+                                <dt><a href="#">인재 채용</a></dt>
+                                <dd><a href="#">- 인사제도</a></dd>
+                                <dd><a href="#">- 직무소개</a></dd>
+                                <dd><a href="#">- 공고 및 입사지원</a></dd>
+
+                                <dt><a href="#">사업장 소개</a></dt>
+                                <dd><a href="#">- 국내 사업장</a></dd>
+                                <dd><a href="#">- 해외 사업장</a></dd>
+                                <dd><a href="#">- 중앙 연구소</a></dd>
+
+                                <dt><a href="#">찾아오시는 길</a></dt>
+                            </dl>
+                        </div>
+
+                        <div class="sitemap-depth1">
+                            <span><a href="#">제품 정보</a></span>
+                        </div>
+
+                        <div class="sitemap-depth1">
+                            <span><a href="#">쿠킹&amp;스토리</a></span>
+                        </div>
+
+                        <div class="sitemap-depth1">
+                            <span><a href="#">홍보 센터</a></span>
+                            <dl class="sitemap-depth2">
+
+                                <dt><a href="#">오뚜기 뉴스</a></dt>
+                                <dd><a href="#">- 보도 자료</a></dd>
+                                <dd><a href="#">- 오뚜기 소식</a></dd>
+
+                                <dt><a href="#">오뚜기 광고</a></dt>
+                                <dd><a href="#">- TV 광고</a></dd>
+                                <dd><a href="#">- 지면광고</a></dd>
+
+                                <dt><a href="#">즐거운 오뚜기</a></dt>
+
+                                <dt><a href="#">카레 및 향신료 국제 심포지엄</a></dt>
+
+                                <dt><a href="#">투자 정보</a></dt>
+                                <dd><a href="#">- 재무정보</a></dd>
+                                <dd><a href="#">- 공시정보</a></dd>
+                            </dl>
+                        </div>
+
+                        <div class="sitemap-depth1">
+                            <span><a href="#">고객 서비스</a></span>
+                            <dl class="sitemap-depth2">
+                                <dt><a href="#">고객 한마디</a></dt>
+
+                                <dt><a href="#">공장 견학</a></dt>
+                                <dd><a href="#">- 공장소개</a></dd>
+                                <dd><a href="#">- 공장견학 신청</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-wrap container">
+                <span class="sitemap-open">
+                    <a href="#"><img src="img/icon_all.png" alt="상단메뉴 열기" /></a>
+                </span>
+
+                <ul class="nav-link">
+                    <li><a href="#"><img src="img/icon_lang.png" alt="언어선택" /></a></li>
+                    <li><a href="#"><img src="img/icon_cart.png" alt="오뚜기몰" /></a></li>
+                </ul>
+
+                <h1 class="logo"><a href="#"><img src="img/logo.png" alt="오뚜기" /></a></h1>
+
+                <nav class="gnb">
+                    <div class="gnb-wrap"></div>
+                    <ul class="gnb-depth1">
+                        <li>
+                            <a href="#">회사소개</a>
+                        </li>
+                        <li>
+                            <a href="#">제품정보</a>
+                        </li>
+                        <li>
+                            <a href="#">쿠킹&amp;스토리</a>
+                        </li>
+                        <li>
+                            <a href="#">홍보센터</a>
+                        </li>
+                        <li>
+                            <a href="#">고객서비스</a>
+                        </li>
+                        <li>
+                            <a href="#">오뚜기몰</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <main>
+
+            <section class="banner on">
+                <ul class="slide">
+                    <li class="on"><img src="img/img_visual7.jpg" alt="" /></li>
+                    <li><img src="img/img_visual8.jpg" alt="" /></li>
+                    <li><img src="img/img_visual8.jpg" alt="" /></li>
+                    <li><img src="img/img_visual8.jpg" alt="" /></li>
+                    <li><img src="img/img_visual8.jpg" alt="" /></li>
+                </ul>
+
+                <div class="control">
+                    <a class="left" href="#"><i class="fas fa-angle-left"></i></a>
+                    <a class="right" href="#"><i class="fas fa-angle-right"></i></a>
+                </div>
+
+                <ul class="indicator">
+                    <li><a href="#">1번 슬라이드</a></li>
+                    <li class="play"><a href="#"><i class="fas fa-pause"></i><i class="fas fa-play"></i></a></li>
+                </ul>
+            </section>
+
+            <section class="site-link container">
+                <ul>
+                    <li>
+                        <img src="img/bgM5.jpg" alt="" />
+                        <a href="#">
+                            <span>오뚜기몰</span><span>바로가기</span><span>more ></span>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="img/bgM1.jpg" alt="" />
+                        <a href="#">
+                            <span>나눔미학</span><span>사회공헌</span><span>more ></span>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="img/bgM3.jpg" alt="" />
+                        <a href="#">
+                            <span>미래가치</span><span>투자정보</span><span>more ></span>
+                        </a>
+                    </li>
+                    <li>
+                        <img src="img/bgM4.jpg" alt="" />
+                        <a href="#">
+                            <span>자연과 함께</span><span>환경 경영</span><span>more ></span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="news container">
+                <h2>오뚜기 뉴스 <a href="#">more ></a></h2>
+
+                <dl>
+                    <dt><a href="#">2019년 1월 1일부터 모든 농산물에  농약허용물질목록관리제도(PLS)가 시행됩니다.</a></dt>
+                    <dd><a href="#">더 강화된 농약관리, 더 안전해진 먹거리!2019년 1월 1일부터 모든 농산물에 농약허용물질목록관리제도(PLS)가 시행됩니다.※ 자세한 사항은 식품안전나라 홈페이지 PLS 자료실을 참조하세요 ...</a></dd>
+                    <dd class="date">2018.12.21</dd>
+                </dl>
+
+                <dl>
+                    <dt><a href="#">제4회 서울국제음식영화제 후원</a></dt>
+                    <dd><a href="#">(주) 오뚜기가 10월 25일부터 11월 4일까지 이수 아트나인, 충무로 남산골 한옥마을에서 개최되는 ‘제4회 서울국제음식영화제’를 후원하였습니다. 요리와 식문화를 테마로 한 국내 유일한 영화제인 서울국제음식영화제는 음식과 영화를 매개로 세...</a></dd>
+                    <dd class="date">2018.11.06</dd>
+                </dl>
+
+                <dl>
+                    <dt><a href="#">2018 화천 토마토 축제 후원</a></dt>
+                    <dd><a href="#">(주) 오뚜기가 후원하는 2018 제16회 화천 토마토축제가 나흘간 총 10만여명 이상의 관광객이 참여한 가운데 성황리에 막을 내렸습니다. 지난 8월 2일부터 5일까지 토마토 재배지로 유명한 강원도 화천에서 열린 2018 화천 토마토 축제는...</a></dd>
+                    <dd class="date">2018.08.06</dd>
+                </dl>
+
+            </section>
+
+            <div class="event-new container">
+                <section class="event">
+                    <h2>이벤트</h2>
+                    <div class="event-slide">
+                        <img src="img/2018-12-21_407249321.jpg" alt="" />
+                    </div>
+                </section>
+
+                <section class="new">
+                    <h2>신제품 소개</h2>
+
+                    <div class="left slide">
+                        <span class="new">NEW</span>
+                        <a href="#">
+                            <img src="img/2018-12-13_117397970[2].jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span class="new">NEW</span>
+
+                        <a href="#">
+                            <img src="img/2019-01-16_816099889.jpg" alt="" />
+                            <p>
+                                <span>담백한 소이마요</span>
+                                <span>조미소스/식품 &gt; 마요네스</span>
+                            </p>
+                        </a>
+
+                    </div>
+                </section>
+            </div>
+
+            <section class="popular">
+                <h2>오뚜기 인기상품</h2>
+            </section>
+
+            <section class="cooking-story">
+                <h2>쿠킹 &amp; 스토리</h2>
+            </section>
+
+            <section class="sns">
+                <h2>오뚜기 SNS</h2>
+
+                <p>소셜미디어를 통해 보는 오뚜기 스토리를 소개합니다.</p>
+
+                <div class="container">
+                    <dl>
+                        <dt class="on"><a href="#">오늘,맛으로 행복한 세상</a></dt>
+                        <dd class="on">
+                            <a href="#" class="margin-left-0">
+                                <img src="img/2019-01-28_806691685[2].jpg" alt="집들이 요리 이걸로 끝. 해물간장찜닭 닭볶음단호박찜" />
+                                <span>닭볶음탕 &amp; 간장찜닭</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-28_806691685[1].jpg" alt="컵 안의 포장마차 오뚜기 얼큰한 어묵탕" />
+                                <span>오뚜기x삼진어묵탕</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-28_806691685.jpg" alt="쇠고기 미역국 대 돼지고기 김치찌개" />
+                                <span>[캡쳐 이벤트] 김치찌개 vs 미역국</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-21_597598786[1].jpg" alt="피자몰 오뚜기 강남점 오뚜기 매점 트럭" />
+                                <span>오뚜기X피자몰 이벤트</span>
+                            </a>
+                        </dd>
+
+                        <dt><a href="#">뚜기네 라면 이야기</a></dt>
+                        <dd>
+                            <a href="#" class="margin-left-0">
+                                <img src="img/2019-01-28_806691685[3].jpg" alt="EVENT 라면 피자 먹을사람 여기 여기 붙어라" />
+                                <span>[이벤트] 뚜기네 매점트럭 가고 싶은 이유를 댓글을 남겨주세요!</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-21_597598786[3].jpg" alt="답답함달래줄 쇠고기미역국라면" />
+                                <span>답답함달래줄 쇠고기미역국라면</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-21_597598786[2].jpg" alt="여러분은 상상 가득한 진라면을 누구에게 선물하고 싶나요?" />
+                                <span>진라면*호안미로 스케치북 이벤트</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-15_602267893[5].jpg" alt="장동건이 진라면 매운맛 제품을 손에 들고 있다" />
+                                <span>#진라면 맛집입니다</span>
+                            </a>
+                        </dd>
+
+                        <dt><a href="#">타바스코 코리아</a></dt>
+                        <dd>
+                            <a href="#" class="margin-left-0">
+                                <img src="img/2019-01-28_806691685[6].jpg" alt="그림 퍼즐 맞추기 사진속의 메뉴는 무엇일까요?" />
+                                <span>[댓글 이벤트] 타바스코 메뉴 퍼즐 맞추기!</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-28_806691685[5].jpg" alt="추억의 군것질 울산 쫀드기" />
+                                <span>타바스코 울산 쫀드기튀김</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-28_806691685[4].jpg" alt="마약 옥수수" />
+                                <span>단짠단짠 마약 옥슈슈</span>
+                            </a>
+                            <a href="#">
+                                <img src="img/2019-01-21_597598786[5].jpg" alt="김밥과 라면" />
+                                <span>매콤한 국물에 몸이 풀린다 풀려!!</span>
+                            </a>
+                        </dd>
+
+                    </dl>
+                </div>
+            </section>
+
+        </main>
+
+        <div class="go-top">
+            <a href="#"><i class="fas fa-angle-up"></i></a>
+        </div>
+
+        <footer>
+
+            <div class="footer-above container">
+                <ul class="links">
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#">고객상담</a></li>
+                    <li><a href="#">찾아오시는 길</a></li>
+                    <li><a href="#">오뚜기몰</a></li>
+                    <li><a href="#"><strong><i class="fas fa-film"></i>동반성장홍보영상</strong></a></li>
+                </ul>
+
+                <ul class="social">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+
+            <div class="footer-below container">
+                <div class="footer-logo">
+                    <img src="img/f_logo.jpg" alt="주식회사 오뚜기" />
+                </div>
+
+                <ul class="info">
+                    <li>(주)오뚜기</li>
+                    <li>사업자등록번호 : 138-81-03238</li>
+                    <li>대표이사 이강훈</li>
+                    <li>주소 (14060) 경기도 안양시 동안구 흥안대로 405 (평촌동 160)</li>
+                    <li>오뚜기 고객상담실 : 080-024-2311</li>
+                    <li class="nobar">오뚜기라면 고객상담실 : 080-088-1212 (월~금 08:30~17:30)</li>
+                    <li class="copyright nobar">Copyright ⓒ ottogi co.,Ltd All Rights Reserved.</li>
+                </ul>
+
+                <div class="mark">
+                    <img src="img/2014_WA_mark2.gif" alt="가족친화우수기업인증마크,한국서비스품질 우수기업 인증마크,미래창조과학부 WA마크" />
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
