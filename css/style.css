@@ -92,9 +92,9 @@ main section.banner div.control a i     { text-shadow:2px 2px 1px #999; }
 
 main section.banner    ul.indicator                         { position:absolute; bottom:50px; left:50%; transform:translateX(-50%); overflow:hidden; background-color:rgba(0, 0, 0, 0.3); padding:10px 20px; border-radius:20px; }
 main section.banner    ul.indicator li                      { float:left; margin:0 5px; }
-main section.banner    ul.indicator li a                    { display:block; width:16px; height:16px; line-height:16px; border-radius:25px; background-color:#fff; color:#fff; text-align:center; overflow:hidden; }
-main section.banner    ul.indicator li.on a                 { background-color:#fef100; }
-main section.banner    ul.indicator li a i                  { display:none; }
+main section.banner    ul.indicator li      a               { display:block; width:16px; height:16px; line-height:16px; border-radius:25px; background-color:#fff; color:#fff; text-align:center; overflow:hidden; }
+main section.banner    ul.indicator li.on   a               { background-color:#fef100; }
+main section.banner    ul.indicator li      a i             { display:none; }
 main section.banner    ul.indicator li.play a               { display:block; margin-left:10px; font-size:16px; border-radius:0; background-color:transparent; color:#fff; }
 main section.banner    ul.indicator li.play a i:first-child { display:none; }
 main section.banner    ul.indicator li.play a i:last-child  { display:block; }
@@ -134,15 +134,48 @@ main section.news dl dd.date { margin-bottom:0; }
 main div.event-new    { margin-top:60px; overflow:hidden; }
 main div.event-new h2 { display:block; font-size:30px; color:#333; font-weight:400; }
 
-/* 이벤트 < 이벤트&신제품 */
-main div.event-new section.event     { float:left; width:600px; box-sizing:border-box; overflow:hidden; }
+/* 이벤트 < 이벤트&신제품소개 */
+main div.event-new section.event     { float:left; width:50%; }
+main div.event-new section.event div.event-slide { border:1px solid #e1e1e1; box-sizing:border-box; }
 main div.event-new section.event img { display:block; width:100%; }
 
-/* 신제품소개 < 이벤트&신제품 */
-main div.event-new section.new                       { overflow:hidden; }
-main div.event-new section.new div.left              { width:300px; height:300px; box-sizing:border-box; float:left; }
+/* 이벤트 슬라이드 < 이벤트 < 이벤트&신제품소개 */
+main div.event-new section.event div.event-slide                       { position:relative; width:100%; height:0; padding-bottom:50%; }
+main div.event-new section.event div.event-slide    ul.slide           { position:absolute; left:0; transition:left 0.3s; width:100%; }
+main div.event-new section.event div.event-slide    ul.slide li        { position:absolute; top:0; left:0; width:100%; overflow:hidden;  }
+main div.event-new section.event div.event-slide    ul.slide li img    { position:relative; left:50%; transform:translateX(-50%); overflow:hidden; }
+main div.event-new section.event div.event-slide    ul.indicator                         { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); overflow:hidden; background-color:rgba(0, 0, 0, 0.3); padding:10px 20px; border-radius:20px; }
+main div.event-new section.event div.event-slide    ul.indicator li                      { float:left; margin:0 2px; }
+main div.event-new section.event div.event-slide    ul.indicator li      a               { display:block; width:16px; height:16px; line-height:16px; border-radius:25px; background-color:#fff; color:#fff; text-align:center; overflow:hidden; }
+main div.event-new section.event div.event-slide    ul.indicator li.on   a               { background-color:#fef100; }
+main div.event-new section.event div.event-slide    ul.indicator li      a i             { display:none; }
+main div.event-new section.event div.event-slide    ul.indicator li.play a               { display:block; margin-left:10px; font-size:16px; border-radius:0; background-color:transparent; color:#fff; }
+main div.event-new section.event div.event-slide    ul.indicator li.play a i:first-child { display:none; }
+main div.event-new section.event div.event-slide    ul.indicator li.play a i:last-child  { display:block; }
+main div.event-new section.event div.event-slide.on ul.indicator li.play a i:first-child { display:block; }
+main div.event-new section.event div.event-slide.on ul.indicator li.play a i:last-child  { display:none; }
+
+
+/* 신제품소개 < 이벤트&신제품소개 */
+main div.event-new section.new div.new-slide                       { position:relative; width:100%; height:0; padding-bottom:50%; }
+main div.event-new section.new div.new-slide    ul.slide           { position:absolute; left:0; transition:left 0.3s; width:100%; }
+main div.event-new section.new div.new-slide    ul.slide li        { position:absolute; top:0; left:0; width:100%; overflow:hidden;  }
+main div.event-new section.new div.new-slide    ul.slide li img    { position:relative; left:50%; transform:translateX(-50%); overflow:hidden; }
+main div.event-new section.new div.new-slide    ul.indicator                         { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); overflow:hidden; background-color:rgba(0, 0, 0, 0.3); padding:10px 20px; border-radius:20px; }
+main div.event-new section.new div.new-slide    ul.indicator li                      { float:left; margin:0 2px; }
+main div.event-new section.new div.new-slide    ul.indicator li      a               { display:block; width:16px; height:16px; line-height:16px; border-radius:25px; background-color:#fff; color:#fff; text-align:center; overflow:hidden; }
+main div.event-new section.new div.new-slide    ul.indicator li.on   a               { background-color:#fef100; }
+main div.event-new section.new div.new-slide    ul.indicator li      a i             { display:none; }
+main div.event-new section.new div.new-slide    ul.indicator li.play a               { display:block; margin-left:10px; font-size:16px; border-radius:0; background-color:transparent; color:#fff; }
+main div.event-new section.new div.new-slide    ul.indicator li.play a i:first-child { display:none; }
+main div.event-new section.new div.new-slide    ul.indicator li.play a i:last-child  { display:block; }
+main div.event-new section.new div.new-slide.on ul.indicator li.play a i:first-child { display:block; }
+main div.event-new section.new div.new-slide.on ul.indicator li.play a i:last-child  { display:none; }
+
+main div.event-new section.new                       { overflow:hidden; width:50%;  }
+main div.event-new section.new div.left              { width:50%; height:0; padding-bottom:50%; float:left; border:1px solid #e1e1e1; box-sizing:border-box; }
 main div.event-new section.new div.left img          { width:100%; }
-main div.event-new section.new div.right             { width:300px; height:300px; box-sizing:border-box; float:right; border:1px solid #e1e1e1; overflow:hidden; }
+main div.event-new section.new div.right             { width:50%; height:0; padding-bottom:50%; float:right; overflow:hidden; border:1px solid #e1e1e1; box-sizing:border-box; }
 main div.event-new section.new div.right img         { width:100%; }
 main div.event-new section.new div a                 { display:block; width:100%; height:100%; }
 main div.event-new section.new div                   { position:relative; }
@@ -150,6 +183,7 @@ main div.event-new section.new div span.new          { position:absolute; top:10
 main div.event-new section.new div p                 { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); box-sizing:border-box; background-color:rgba(255, 255, 255, 0.7); border-radius:10px; }
 main div.event-new section.new div p span            { display:block; text-align:center; color:#333; font-size:18px; }
 main div.event-new section.new div p span:last-child { color:#666; font-size:14px; }
+
 
 main section.popular { background:url('../img/visual_06.jpg') center center no-repeat; background-size:cover; height:600px; margin-top:70px; }
 

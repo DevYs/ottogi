@@ -15,11 +15,14 @@ $(document).ready(function() {
 /***********************
     HTML 태그 생성 및 초기화
 ************************/
-setSlide('.banner', 0);
+setSlide('.banner', 1);
+setSlide('.event-slide', 1);
+setSlide('.new-slide', 1);
 
 /*************
     이벤트 선언부
 *************/
+// a태그 링크 이동 막기
 $(document).find('a').on('click', function(e) {
     e.preventDefault();
 });
@@ -69,17 +72,24 @@ function setSlide(selector, slideNum) {
         var indicator       = $(this).find('.indicator');
         var indicatorButton = indicator.find('li').eq(0).clone().wrapAll('<div/>').parent().html();
         var playButton      = indicator.find('li.play').clone().wrapAll('<div/>').parent().html();
-        var now             = 1;
+        var now             = slideNum;
         var next            = 0;
         var prev            = 0;
         var slideSize       = slide.children().length;
+        var timerId         = 0;
+        var intervalTime    = 2 * 1000;
+        var isTimerOn       = true;
 
         /***********************
             HTML 태그 생성 및 초기화
         ************************/
+        // 슬라이드 재생 on
         $(this).addClass('on');
 
+        // 인디케이터를 비운다.
         indicator.empty();
+
+        // 인디케이터에 버튼을 추가한다.
         for(var i=0; i<slideSize; i++) {
             var num = i + 1;
             indicator.append($(indicatorButton));
@@ -89,29 +99,57 @@ function setSlide(selector, slideNum) {
                indicator.find('li').addClass('on');
             }
         }
+
+        // 인디케이터의 마지막에 슬라이드 재생/일시정지 버튼을 추가한다.
         indicator.append(playButton);
 
+        // 슬라이드의 위치를 인덱스 X 100%로 계산하여 위치시킨다. 
         slide.find('li').each(function(i) {
             $(this).css({ 'left': (i * 100) + '%' });
         });
 
+        // 슬라이드 재생
+        playSlide();
+
         /*************
             이벤트 선언부
         *************/
+        // 이전 슬라이드 버튼 클릭 이벤트
         control.find('.left').on('click', function() {
             setSlideNum('.left');
             setSlide();
+            playSlide();
         });
+
+        // 다음 슬라이드 버튼 클릭 이벤트
         control.find('.right').on('click', function() {
-            setSlideNum('.right');
+            setSlideNum('right');
             setSlide();
+            playSlide();
         });
-        indicator.find('a').on('click', function() {
+
+        // 인디케이터 버튼 클릭 이벤트
+        indicator.find('li').not('.play').find('a').on('click', function() {
             var index = indicator.children().index($(this).parent());
             now = index + 1;
 
             setSlideNum();
             setSlide();
+            playSlide();
+        });
+
+        // 인디케이터 재생 및 일시정지 버튼 이벤트 
+        indicator.find('.play a').on('click', function() {
+            if(isTimerOn === true) {
+                slide.parent().removeClass('on');
+                clearInterval(timerId);
+            } else {
+                slide.parent().addClass('on');
+                playSlide();
+            }
+
+            // 처리가 끝난 후 isTimerOn의 밸류를 토글한다.
+            isTimerOn = !isTimerOn;
         });
 
         /************
@@ -123,13 +161,14 @@ function setSlide(selector, slideNum) {
         */
         function setSlideNum(direction) {
 
+            // 방향에 따라 현재 슬라이드 번호를 계산한다
             if(direction !== undefined) {
-                if(0 < direction.indexOf('left')) {
+                if(-1 < direction.indexOf('left')) {
                     now = now - 1;
                     if(now < 1) {
                         now = slideSize;
                     }
-                } else if(0 < direction.indexOf('right')) {
+                } else if(-1 < direction.indexOf('right')) {
                     now = now + 1;
                     if(slideSize < now) {
                         now = 1;
@@ -137,11 +176,13 @@ function setSlide(selector, slideNum) {
                 }
             }
 
+            // 다음 슬라이드 번호 계산
             next = now + 1;
             if(slideSize < next) {
                 next = 1;
             }
 
+            // 이전 슬라이드 번호 계산
             prev = now - 1;
             if(prev < 1) {
                 prev = slideSize;
@@ -150,16 +191,30 @@ function setSlide(selector, slideNum) {
             console.log(prev + ' / ' + now + ' / ' + next);
         }
 
+        /**
+         * now에 해당하는 슬라이드를 보이게 한다.
+         */
         function setSlide() {
             var slideNum = now - 1;
             var left = -(slideNum * 100);
-            console.log(slideNum);
-            console.log(left);
 
             indicator.children().removeClass('on');
             indicator.children().eq(slideNum).addClass('on');
 
             slide.css({'left': left + '%'});
+        }
+
+        /**
+         * 슬라이드를 intrvalTime마다 재생시킵니다.
+         */
+        function playSlide() {
+            clearInterval(timerId);
+            timerId = setInterval(function() {
+                if(isTimerOn === true) {
+                    setSlideNum('right');
+                    setSlide();
+                }
+            }, intervalTime);
         }
     });
 }
