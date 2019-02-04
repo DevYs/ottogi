@@ -69,12 +69,16 @@ header nav.sitemap div.sitemap-wrap div.sitemap-depth1 dl.sitemap-depth2 dd { pa
 /******
     GNB
 ******/
-header div.header-wrap nav.gnb                                       { margin-top:130px; }
-header div.header-wrap nav.gnb ul.gnb-depth1                         { margin-top:18px; }
-header div.header-wrap nav.gnb ul.gnb-depth1 li                      { display:inline-block; width:16.333%; }
-header div.header-wrap nav.gnb ul.gnb-depth1 li             a        { display:block; width:100%; height:77px; line-height:77px; font-size:18px; font-weight:400; color:#082841; }
-header div.header-wrap nav.gnb ul.gnb-depth1 li             a:before { content:'|'; font-size:14px; height:77px; line-height:77px; vertical-align:top; float:left; }
-header div.header-wrap nav.gnb ul.gnb-depth1 li:first-child a:before { content:''; }
+header div.header-wrap nav.gnb                                            { margin-top:130px; }
+header div.header-wrap nav.gnb ul.gnb-depth1                              { margin-top:18px; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li                           { display:inline-block; width:16.333%; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a             { position:relative; display:block; width:100%; height:77px; line-height:77px; font-size:18px; font-weight:400; color:#082841; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a:hover       { color:#dc2c34; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a:before      { content:'|'; font-size:14px; height:77px; line-height:77px; vertical-align:top; float:left; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li:first-child a:before      { content:''; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a:after       { bottom:-2px; background-color:#dc2c34; content:' '; height:5px; left:0; position:absolute; transition:width 0.3s; width:0; }
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a:hover:after,
+header div.header-wrap nav.gnb ul.gnb-depth1 li             a:focus:after { width:100%; }
 
 
 /******
