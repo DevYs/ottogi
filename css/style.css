@@ -36,17 +36,22 @@ header div.header-wrap span.sitemap-open a     { display:block; width:67px; heig
 header div.header-wrap span.sitemap-open a img { vertical-align:middle; }
 
 /* 로고 */
-header div.header-wrap h1.logo   { width:101px; height:98px; margin:16px auto 0 auto;  }
+header div.header-wrap h1.logo   { width:101px; height:98px; position: absolute; left: 50%; transform: translateX(-50%); top: 16px; }
 header div.header-wrap h1.logo a { display:block; width:100%; height:100%; }
 
 /* 상단 우측 링크 버튼 < 헤더 */
-header div.header-wrap ul.nav-link    { float:right; margin-top:35px; margin-right:20px; }
-header div.header-wrap ul.nav-link li { display:inline-block; margin-left:10px; }
+header div.header-wrap ul.nav-link                    { float:right; margin-top:35px; margin-right:20px; }
+header div.header-wrap ul.nav-link li                 { display:inline-block; margin-left:10px; }
+header div.header-wrap ul.nav-link li.lang            { position:relative; }
+header div.header-wrap ul.nav-link li.lang ul         { transition:transform 0.3s; transform:scaleY(0) translateX(-50%); overflow:hidden; position:absolute; margin-top:5px; left:50%; background-color:#fff; }
+header div.header-wrap ul.nav-link li.lang ul.on      { transform:scaleY(1) translateX(-50%); }
+header div.header-wrap ul.nav-link li.lang ul    li   { display:block; margin-left:0; padding:5px 20px; }  
+header div.header-wrap ul.nav-link li.lang ul    li a { font-weight:900; display:block; width:100%; height:100%; }
 
 /**********
     사이트맵
 **********/
-header nav.sitemap { position:absolute; background-color:#fff; width:100%; height:0px; transition:height 0.3s; color:#777; overflow:hidden; z-index:3; }
+header nav.sitemap { display:none; position:absolute; background-color:#fff; width:100%; height:0px; transition:height 0.3s; color:#777; overflow:hidden; z-index:3; }
 
 /* GNB 닫기 버튼 < 사이트맵 */
 header nav.sitemap div.sitemap-close       { position:absolute; }
@@ -54,7 +59,7 @@ header nav.sitemap div.sitemap-close a     { display:block; width:67px; height:6
 header nav.sitemap div.sitemap-close a img { vertical-align:middle; }
 
 /* GNB 목록 < 사이트맵 */
-header nav.sitemap div.sitemap-wrap                                         { display:none; padding:130px 0 60px 0; overflow:hidden; }
+header nav.sitemap div.sitemap-wrap                                         { display:block; padding:130px 0 60px 0; overflow:hidden; }
 header nav.sitemap div.sitemap-wrap div.sitemap-depth1                      { float:left; width:20%; padding:0 20px; box-sizing:border-box; }
 header nav.sitemap div.sitemap-wrap div.sitemap-depth1 span                 { display:block; background-image:url('../img/bg_menuh3.png'); background-position:left top; background-repeat:no-repeat; padding-top:20px; }
 header nav.sitemap div.sitemap-wrap div.sitemap-depth1 span a               { display:block; font-size:30px; }
@@ -64,6 +69,7 @@ header nav.sitemap div.sitemap-wrap div.sitemap-depth1 dl.sitemap-depth2 dd { pa
 /******
     GNB
 ******/
+header div.header-wrap nav.gnb                                       { margin-top:130px; }
 header div.header-wrap nav.gnb ul.gnb-depth1                         { margin-top:18px; }
 header div.header-wrap nav.gnb ul.gnb-depth1 li                      { display:inline-block; width:16.333%; }
 header div.header-wrap nav.gnb ul.gnb-depth1 li             a        { display:block; width:100%; height:77px; line-height:77px; font-size:18px; font-weight:400; color:#082841; }
@@ -349,7 +355,7 @@ div.go-top a { width:70px; height:70px; line-height:70px; display:block; font-si
     header div.header-wrap h1.logo a     { display:block; width:100%; height:100%; }
     header div.header-wrap h1.logo a img { display:block; width:100%; height:100%; }
 
-    header nav.sitemap                                                             { height:0; top:94px; }
+    header nav.sitemap                                                             { display:block; height:0; top:94px; }
     header nav.sitemap div.container                                               { margin:0; }
     header nav.sitemap div.sitemap-close                                           { display:none; }
     header nav.sitemap div.sitemap-wrap                                            { display:block; padding:0; color:#fff; }

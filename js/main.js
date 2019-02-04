@@ -42,6 +42,23 @@ $('header nav.sitemap div.sitemap-close a').on('click', function() {
     $('header div.header-wrap span.sitemap-open a').focus();
 });
 
+// 언어선택 < 상단 우측 링크
+$('header div.header-wrap ul.nav-link li.lang > a').on('click focus', function() {
+    $(this).parent().find('ul').toggleClass('on');
+});
+
+$('header div.header-wrap ul.nav-link li.lang > a').on('focusout', function() {
+    $(this).parent().find('ul').removeClass('on');
+});
+
+$('header div.header-wrap ul.nav-link li.lang ul li a').on('focus', function() {
+    $(this).parent().parent().addClass('on');
+});
+
+$('header div.header-wrap ul.nav-link li.lang ul li a').on('focusout', function() {
+    $(this).parent().parent().removeClass('on');
+});
+
 // SNS 클릭 및 포커스
 $('main section.sns dl dt a').on('click focus', function() {
     $('main section.sns dl dt').removeClass('on');
