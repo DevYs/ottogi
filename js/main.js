@@ -19,10 +19,13 @@ setSlide('.banner', 1);
 setSlide('.event-slide', 1);
 setSlide('.new-slide', 1);
 
+setList('section.popular div.list');
+setList('section.cooking-story div.list');
+
 /*************
     이벤트 선언부
 *************/
-// a태그 링크 이동 막기
+// a 태그 링크 이동 막기
 $(document).find('a').on('click', function(e) {
     e.preventDefault();
 });
@@ -117,14 +120,14 @@ function setSlide(selector, slideNum) {
         // 이전 슬라이드 버튼 클릭 이벤트
         control.find('.left').on('click', function() {
             setSlideNum('.left');
-            setSlide();
+            showSlide();
             playSlide();
         });
 
         // 다음 슬라이드 버튼 클릭 이벤트
         control.find('.right').on('click', function() {
-            setSlideNum('right');
-            setSlide();
+            setSlideNum('.right');
+            showSlide();
             playSlide();
         });
 
@@ -134,7 +137,7 @@ function setSlide(selector, slideNum) {
             now = index + 1;
 
             setSlideNum();
-            setSlide();
+            showSlide();
             playSlide();
         });
 
@@ -188,13 +191,12 @@ function setSlide(selector, slideNum) {
                 prev = slideSize;
             }
 
-            console.log(prev + ' / ' + now + ' / ' + next);
         }
 
         /**
          * now에 해당하는 슬라이드를 보이게 한다.
          */
-        function setSlide() {
+        function showSlide() {
             var slideNum = now - 1;
             var left = -(slideNum * 100);
 
@@ -212,14 +214,53 @@ function setSlide(selector, slideNum) {
             timerId = setInterval(function() {
                 if(isTimerOn === true) {
                     setSlideNum('right');
-                    setSlide();
+                    showSlide();
                 }
             }, intervalTime);
         }
     });
 }
 
+/**
+ * 리스트 기능을 설정합니다. 
+ */
+function setList(selector) {
+    $(selector).each(function() {
+        var itemWidth  = 240;
+        var items      = $(this).find('ul.items');
+        var itemLength = items.find('li').length;
+        var itemsWidth = itemLength * itemWidth;
+        var control    = $(this).find('div.control'); 
+        var left       = control.find('.left');
+        var right      = control.find('.right');
+        var direction  = 0;
 
+        items.css({'width': itemsWidth + 'px'});
+
+        left.on('click', function() {
+            if(Math.abs(direction) < 1) {
+                return false;
+            }
+
+            direction = direction + 1;
+            console.log('left ' + direction);
+            var left =  direction * itemWidth + 'px';
+            items.css({ 'left':left });
+        });
+
+        right.on('click', function() {
+            if((itemLength - 1) === Math.abs(direction)) {
+                return false;
+            }
+
+            direction = direction - 1;
+            console.log('right ' + direction);
+            var left = direction * itemWidth + 'px';
+            items.css({ 'left':left });
+        });
+
+    });
+}
 
 /***************** 종료 ***************/
 });
