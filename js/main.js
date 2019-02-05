@@ -30,33 +30,75 @@ $(document).find('a').on('click', function(e) {
     e.preventDefault();
 });
 
-// 사이트맵 열기 버튼
-$('header div.header-wrap span.sitemap-open a').on('click', function() {
-    $('header nav.sitemap').css({'height':'800px'});
-    $('header nav.sitemap div.sitemap-close a').focus();
-});
-
-// 사이트맵 닫기 버튼
-$('header nav.sitemap div.sitemap-close a').on('click', function() {
-    $('header nav.sitemap').css({'height':'0'});
-    $('header div.header-wrap span.sitemap-open a').focus();
-});
-
-// 언어선택 < 상단 우측 링크
+// 언어선택 클릭, 포커스 이벤트 < 상단 우측 링크
 $('header div.header-wrap ul.nav-link li.lang > a').on('click focus', function() {
     $(this).parent().find('ul').toggleClass('on');
 });
 
+// 언어선택 포커스 아웃 이벤트 < 상단 우측 링크
 $('header div.header-wrap ul.nav-link li.lang > a').on('focusout', function() {
     $(this).parent().find('ul').removeClass('on');
 });
 
+// 언어 포커스 이벤트 < 언어선택 < 상단 우측 링크
 $('header div.header-wrap ul.nav-link li.lang ul li a').on('focus', function() {
     $(this).parent().parent().addClass('on');
 });
 
+// 언어 포커스아웃 이벤트 < 언어선택 < 상단 우측 링크
 $('header div.header-wrap ul.nav-link li.lang ul li a').on('focusout', function() {
     $(this).parent().parent().removeClass('on');
+});
+
+// 사이트맵 열기 버튼
+$('header nav.sitemap span.sitemap-btn a').eq(0).on('click', function() {
+    $('header nav.sitemap').addClass('on');
+});
+
+$('header nav.sitemap span.sitemap-btn a').eq(0).on('focus', function() {
+    $('header nav.sitemap').addClass('remove');
+});
+
+// 사이트맵 닫기 버튼
+$('header nav.sitemap span.sitemap-btn a').eq(1).on('click', function() {
+    $('header nav.sitemap').removeClass('on');
+});
+$('header nav.sitemap span.sitemap-btn a').eq(1).on('focus', function() {
+    $('header nav.sitemap').addClass('on');
+});
+
+
+$('header nav.sitemap div.sitemap-wrap div.sitemap-depth1 > a').on('click focus', function() {
+    $('header nav.sitemap div.sitemap-wrap div.sitemap-depth1').removeClass('on');
+    $(this).parent().addClass('on');
+});
+
+$('header nav.sitemap div.sitemap-wrap div.sitemap-depth1:last-child dl.sitemap-depth2 dd:last-child a').on('focusout', function() {
+    $('header nav.sitemap span.sitemap-btn a').eq(1).trigger('click');
+});
+
+// depth1 클릭 이벤트
+$('header div.header-wrap nav.gnb ul.gnb-depth1 > li > a').on('click focus', function() {
+    if($(this).parent().has('div.gnb-depth1-wrap').length < 1) {
+        return false;
+    } 
+    
+    $('header div.gnb-bg').addClass('on');
+    $('header div.header-wrap nav.gnb ul.gnb-depth1 > li').removeClass('on');
+    $('header div.header-wrap nav.gnb ul.gnb-depth1 > li div.gnb-depth1-wrap ul.gnb-depth2 > li').removeClass('on');
+    $(this).parent().addClass('on');
+});
+
+$('header div.header-wrap nav.gnb ul.gnb-depth1 > li.no-depth a').on('focus', function() {
+    $('header div.gnb-bg').removeClass('on');
+    $('header div.header-wrap nav.gnb ul.gnb-depth1 > li').removeClass('on');
+    $('header div.header-wrap nav.gnb ul.gnb-depth1 > li div.gnb-depth1-wrap ul.gnb-depth2 > li').removeClass('on');
+});
+
+// depth2 클릭 이벤트
+$('header div.header-wrap nav.gnb ul.gnb-depth1 > li div.gnb-depth1-wrap ul.gnb-depth2 > li > a').on('click focus', function() {
+    $('header div.header-wrap nav.gnb ul.gnb-depth1 > li div.gnb-depth1-wrap ul.gnb-depth2 > li').removeClass('on');
+    $(this).parent().addClass('on');
 });
 
 // SNS 클릭 및 포커스
@@ -78,7 +120,6 @@ $('main section.sns dl dd a').on('focus', function() {
 /************
 	함수 선언부
 ************/
-
 /*
     슬라이드를 설정합니다.
 */
