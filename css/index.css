@@ -269,8 +269,8 @@ main section.sns dl dd     a             span { display:block; height:40px; }
     /******
         SNS
     ******/
-    main section.sns                        { height:1000px; }
-    main section.sns dl                     { height:800px; }
+    main section.sns                        { height:800px; }
+    main section.sns dl                     { height:600px; }
     main section.sns dl:before              { height:120px; }
     main section.sns dl dt                  { width:50%; }
     main section.sns dl dt.on a:after       { content:none; }

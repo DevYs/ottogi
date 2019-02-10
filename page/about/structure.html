@@ -1,0 +1,135 @@
+<!--
+    HTML 문서의 작성 순서
+    순서 1. 디자인에서 반응형 구조를 포함해서 전체적인 레이아웃 영역을 나눈다.
+    순서 2. 나누어진 레이아웃 영역을 문서의 논리적인 순서에 최대한 맞추어 CSS로 레이아웃 영역을 잡는다.
+    순서 3. 레이아웃 영역이 잡혔다면 콘텐츠를 다시 순서1과 순서2의 순서대로 작업한다.
+    순서 4. 세세한 스타일과 비주얼, 효과 등을 작업한다. 단, 순서 4의 경우 순서1과 순서2에서 작업이 가능하다면 미리 처리하여도 무방하다.
+
+    * 집을 지은 후 방은 꾸민다고 생각하자.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="DevY" />
+    <meta name="apple-mobile-web-app-title" content="오뚜기" />
+    <title>오뚜기</title>
+    <meta name="description" content="오뚜기 메인화면" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link href="../../css/common.css" rel="stylesheet" />
+    <link href="../../css/common-sub.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/common-sub.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <main class="sub">
+            
+            <!-- 인트로 -->
+            <div class="intro">
+                <div class="container">
+                    <h2>(주) 오뚜기</h2>
+                    <dl>
+                        <dt>오뚜기 소개</dt>
+                        <dd>(주)오뚜기 임직원은 식품을 통해 인류의 건강과 행복을 추구하고 있습니다.</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- 서브링크 -->
+            <div class="sub-link size-3">
+                <ul class="container">
+                    <li class="on"><a href="summary.html">회사개요</a></li>
+                    <li><a href="biz-history.html">회사연혁</a></li>
+                    <li><a href="product-history.html">제품연혁</a></li>
+                </ul>
+            </div>
+
+            <!-- path -->
+            <div class="path">
+                <ul class="container">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">(주) 오뚜기</a></li> 
+                </ul>        
+            </div>
+
+            <!-- h3과 하단 설명  -->
+            <div class="sub-header-3 container">
+                <h3>최고의 맛을 향한 열정</h3>
+                <p>오뚜기 전 임직원들은 '보다 좋은 품질, 보다 높은 영양, 보다 앞선 식품'으로 인류 식생활 향상에 이바지하기 위해 맡은 바 업무에 최선을 다하고 있습니다.<br />영업, 생산, 연구, 관리 등 모든 부서에서 스스로에게 주어진 업무를 빈틈없이 처리하고 있는 것은 물론 밝고 명랑한 직장 분위기를 만들기 위해 노력하고 있습니다.<br />이러한 오뚜기의 노력들이 바로 최고 품질, 최고의 맛으로 승화되는 것입니다.</p>
+            </div>
+            
+            <!-- 박스 콘텐츠 -->
+            <div class="box-contents type1 container">
+                <div class="red">
+                    <p class="img"><img src="img/img_about1.jpg" alt="" /></p>
+                    <dl>
+                        <dt>오뚜기는</dt>
+                        <dd>보다 좋은 품질<br />보다 높은 영양<br />보다 앞선 식품을 위해<br />최선을 다하고 있습니다</dd>
+                    </dl>    
+                </div>
+                <div class="grey">
+                    <p class="img"><img src="img/img_about2.jpg" alt="" /></p>
+                    <dl>
+                        <dt>최고의 맛을 향한 열정</dt>
+                        <dd>모든 부서에서 최고 품질,최고 맛을<br />승화시키기 위해<br />보다 앞선 식품을 위해<br />최선을 다하고 있습니다</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- 박스 콘텐츠 -->
+            <div class="box-contents type1 container">
+                <p class="img"><img src="img/img_social07.jpg" alt="" /></p>
+                <div class="red">
+                    <p class="img"><img src="img/img_about2.jpg" alt="" /></p>
+                    <dl>
+                        <dt>최고의 맛을 향한 열정</dt>
+                        <dd>모든 부서에서 최고 품질,최고 맛을<br />승화시키기 위해<br />보다 앞선 식품을 위해<br />최선을 다하고 있습니다</dd>
+                    </dl>
+                </div>
+            </div>
+            
+
+            <!-- 박스 콘텐츠 -->
+            <div class="box-contents type2 container">
+                <div>
+                    <dl>
+                        <dt>오뚜기 임직원 봉사활동</dt>
+                        <dd>오뚜기 임직원 봉사활동은 매주 수요일과 금요일에 굿윌스토어 도봉정과 송파점에 자발적으로 자원봉사활동에 참여하여 선물세트 임가공 작업 및 중고품 수선, 굿윌스토어 제품 진열 및 판매, 장애인 점심 배식 등을 돕는 활동입니다.<br />(2018년 12월 기준 1,908명 참여)</dd>
+                        <dt>오뚜기 물품 기증 캠페인</dt>
+                        <dd>오뚜기 물품 기증 캠페인은 오뚜기 임직원들의 사내물품 기증 캠페인으로 오뚜기 임직원이 기증한 물품은 장애인들이 깨끗이 손질 및 수선하여 매장에서 저렴한 가격에 판매되고 있습니다.<br />(2018년 12월 기준 21,890참여 , 100,564점 기증)</dd>
+                        <dd>또한 지난 2013년 7월부터는 매년 프로야구 넥센히어로즈 야구단의 홈구장에 밀알재단 굿윌스토어 장애인 임직원을 초청하여 야구관람 및 시구 시타 행사를 진행하는 오뚜기데이 행사를 진행하고 있으며, 2012년부터는 매년 오뚜기 대풍공장 견학초청도 실시하고 있습니다.</dd>
+                    </dl>
+                </div>
+                <p class="img">
+                    <img src="img/img_social10.jpg" alt="템플릿" />
+                </p>
+            </div>
+
+            <!-- 박스 콘텐츠 -->
+            <div class="box-contents type2 container">
+                <div>
+                    <dl>
+                        <dt></dt>
+                        <dd>매년 5월 개최되는 <strong>'스위트홈 오뚜기 가족요리 페스티발'</strong>에 선천성 심장병 완치 어린이들을 초청하여 요리교실을 진행하고 있습니다. 또한, 매년 10월에는 심장병 완치 어린이와 가족을 충북 음성에 소재한 ㈜오뚜기 대풍공장에 초청하여 공장견학, 신제품 요리시연회도 진행하고 있습니다.</dd>
+                    </dl>
+                </div>
+                <div>
+                    <dl>
+                        <dt>밀알재단 굿윌스토어 장애인지원</dt>
+                        <dd>밀알재단 굿윌스토어 장애인지원 협력사업은 장애인 학교와 장애인 재활센터를 운영하는 밀알재단의 굿윌스토어(Goodwill Store)와 함께 장애인의 자립을 돕는 협력사업 입니다. ‘굿윌스토어’는 기업과 개인에게 생활용품이나 의류 등의 물품을 기증받은 후, 장애인들이 잘 손질하여 저렴한 가격으로 판매하는 곳으로 장애인들의 재활과 자립을 돕고 있습니다.</dd>
+                    </dl>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -26,12 +26,13 @@ setList('section.cooking-story div.list');
     이벤트 선언부
 *************/
 // a 태그 링크 이동 막기
-$(document).find('a').on('click', function(e) {
-    e.preventDefault();
-});
+// $(document).find('a').on('click', function(e) {
+//     e.preventDefault();
+// });
 
 // SNS 클릭 및 포커스
-$('main section.sns dl dt a').on('click focus', function() {
+$('main section.sns dl dt a').on('click focus', function(e) {
+    e.preventDefault();
     $('main section.sns dl dt').removeClass('on');
     $('main section.sns dl dd').removeClass('on');
     $(this).parent().addClass('on');
@@ -105,21 +106,24 @@ function setSlide(selector, slideNum) {
             이벤트 선언부
         *************/
         // 이전 슬라이드 버튼 클릭 이벤트
-        control.find('.left').on('click', function() {
+        control.find('.left').on('click', function(e) {
+            e.preventDefault();
             setSlideNum('.left');
             showSlide();
             playSlide();
         });
 
         // 다음 슬라이드 버튼 클릭 이벤트
-        control.find('.right').on('click', function() {
+        control.find('.right').on('click', function(e) {
+            e.preventDefault();
             setSlideNum('.right');
             showSlide();
             playSlide();
         });
 
         // 인디케이터 버튼 클릭 이벤트
-        indicator.find('li').not('.play').find('a').on('click', function() {
+        indicator.find('li').not('.play').find('a').on('click', function(e) {
+            e.preventDefault();
             var index = indicator.children().index($(this).parent());
             now = index + 1;
 
@@ -129,7 +133,9 @@ function setSlide(selector, slideNum) {
         });
 
         // 인디케이터 재생 및 일시정지 버튼 이벤트 
-        indicator.find('.play a').on('click', function() {
+        indicator.find('.play a').on('click', function(e) {
+            e.preventDefault();
+
             if(isTimerOn === true) {
                 slide.parent().removeClass('on');
                 clearInterval(timerId);
@@ -224,24 +230,25 @@ function setList(selector) {
 
         items.css({'width': itemsWidth + 'px'});
 
-        left.on('click', function() {
+        left.on('click', function(e) {
+            e.preventDefault();
             if(Math.abs(direction) < 1) {
                 return false;
             }
 
             direction = direction + 1;
-            console.log('left ' + direction);
             var left =  direction * itemWidth + 'px';
             items.css({ 'left':left });
         });
 
-        right.on('click', function() {
+        right.on('click', function(e) {
+            e.preventDefault();
+
             if((itemLength - 1) === Math.abs(direction)) {
                 return false;
             }
 
             direction = direction - 1;
-            console.log('right ' + direction);
             var left = direction * itemWidth + 'px';
             items.css({ 'left':left });
         });

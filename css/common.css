@@ -38,7 +38,7 @@ header div.header-wrap h1.logo a { display:block; width:100%; height:100%; }
 header div.header-wrap ul.nav-link                    { position:absolute; text-align:right; top:35px; }
 header div.header-wrap ul.nav-link li                 { display:inline-block; margin-left:10px; }
 header div.header-wrap ul.nav-link li.lang            { position:relative; }
-header div.header-wrap ul.nav-link li.lang ul         { transition:transform 0.3s; transform:scaleY(0) translateX(-50%); overflow:hidden; position:absolute; margin-top:5px; left:50%; background-color:#fff; }
+header div.header-wrap ul.nav-link li.lang ul         { transition:transform 0.3s; transform-origin:left top; transform:scaleY(0) translateX(-50%); overflow:hidden; position:absolute; margin-top:5px; left:50%; background-color:#fff; }
 header div.header-wrap ul.nav-link li.lang ul.on      { transform:scaleY(1) translateX(-50%); }
 header div.header-wrap ul.nav-link li.lang ul    li   { display:block; margin-left:0; padding:5px 20px; }  
 header div.header-wrap ul.nav-link li.lang ul    li a { font-weight:900; display:block; width:100%; height:100%; }
@@ -59,8 +59,9 @@ header div.header-wrap nav.sitemap    div.sitemap-wrap                          
 header div.header-wrap nav.sitemap.on div.sitemap-wrap                                                      { display:block; }
 header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1                                   { width:100%; text-align:left; }
 header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1              > a                  { position:relative; display:block; width:100%; border-bottom:1px solid #e76c71; background-color:#dc2c34; display:block; height:60px; line-height:60px; padding:0 20px; box-sizing:border-box; font-size:20px; text-align:left; }
-header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1.has-depth    > a:after            { content:'+'; position:absolute; top:50%; right:20px; transform:translateY(-50%); font-size:48px; }
-header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1.has-depth.on > a:after            { content:'-'; }
+header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1              > a i                { display:block; height:60px; line-height:60px; position:absolute; right:0; top:0; text-align:center; width:60px; }
+/* header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1.has-depth    > a:after            { content:'+'; position:absolute; top:50%; right:20px; transform:translateY(-50%); font-size:48px; }
+header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1.has-depth.on > a:after            { content:'-'; } */
 header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1              dl.sitemap-depth2    { background-color:#9a1f24; height:0; opacity:0; overflow:hidden; }
 header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1.on           dl.sitemap-depth2    { height:auto; opacity:1; padding:20px; }
 header div.header-wrap nav.sitemap    div.sitemap-wrap div.sitemap-depth1              dl.sitemap-depth2 dt { padding:7px 14px; }
@@ -93,8 +94,8 @@ header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li      a             { color:#666; display:block; font-size:14px; font-weight:900; height:30px; line-height:30px; }
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li      a:hover       { color:#dc2c34; }
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li.on > a             { color:#dc2c34; }
-header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li      ul.gnb-depth3 { /*display:none;*/ opacity:0; left:180px; margin-left:20px; position:absolute; top:0; width:180px; } 
-header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li.on   ul.gnb-depth3 { /*display:block;*/ opacity:1; left:180px; position:absolute; top:0; } 
+header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li      ul.gnb-depth3 { opacity:0; left:180px; margin-left:20px; position:absolute; top:0; width:180px; } 
+header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap ul.gnb-depth2 > li.on   ul.gnb-depth3 { opacity:1; left:180px; position:absolute; top:0; z-index:3; } 
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap div.etc                               { float:right; }
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap div.etc a                             { border:2px solid #cdcdcd; color:#666; display:block; font-size:16px; height:40px; line-height:40px; margin-bottom:6px; text-align:center; width:224px; }
 header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap div.etc a i                           { color:#E14B4F; }
@@ -103,7 +104,7 @@ header div.header-wrap nav.gnb ul.gnb-depth1 > li    div.gnb-depth1-wrap div.etc
 /*********
     footer
 *********/
-footer { height:auto; }
+footer { height:auto; margin-top:100px; }
 
 /* footer 상단 < footer */
 footer div.footer-above { overflow:hidden; background-color:#f7f7f7; border-top:1px solid #e4e4e4; border-bottom:1px solid #e4e4e4; }
@@ -224,7 +225,7 @@ div.go-top a { width:70px; height:70px; line-height:70px; display:block; font-si
     footer div.footer-above               { background:none; border:none; }
     footer div.footer-above ul.links      { width:100%; overflow:hidden; background-color:#f7f7f7; }
     footer div.footer-above ul.links li   { float:left; display:block; width:50%; height:45px; line-height:45px; text-align:center; border:1px solid #e4e4e4; box-sizing:border-box;}
-    footer div.footer-above ul.links li a { height:auto; line-height:inherit; }
+    footer div.footer-above ul.links li a { height:auto; line-height:inherit; margin-right:0; }
     footer div.footer-above ul.social     { width:100%; text-align:center; margin-top:10px; }
     footer div.footer-above ul.social li  { float:none; display:inline-block; }
 
