@@ -1,5 +1,30 @@
 @charset 'utf-8';
 
+
+/********************
+    1 Depte > 2 Depth
+********************/
+/* 3 Depth > 4 Depth > 5 Depth */
+/* 3 Depth > 4 Depth > 5 Depth */
+/* 3 Depth > 4 Depth > 5 Depth */
+
+/* 
+@media (max-width: 1200px) { }
+@media (max-width: 1024px) { }
+@media (max-width: 900px) { }
+@media (max-width: 800px) { }
+@media (max-width: 640px) { }
+*/
+
+/*
+    Read me
+    1. 메뉴에 속하지 않는 단일 페이지의 스타일이 최상위에 위치합니다.
+    2. 대메뉴(Depth1)와 중메뉴(Depth2) 주석 하단에 하위 메뉴(Depth3 이하)들의 스타일이 위치하게 됩니다.
+    3. HTML 문서의 요소들의 논리적인 순서에 맞게 스타일이 위치합니다.
+    4. 속성은 알파벳 순으로 작성하였습니다.
+    5. 하단에는 반응형을 위한 미디어쿼리가 폭(max-width)이 큰 순서대로 작성하였습니다.
+*/
+
 /***************
     개인정보처리방침
 ***************/
@@ -16,34 +41,7 @@ main.individual div.policy ol > li                { margin-top:10px; }
 main.individual div.policy ol > li > ol > li      { margin-top:0; }
 main.individual div.policy li   p                 { margin-top:0; }
 
-/*****************
-    게시물 (article)
-*****************/
-main.sub div.article { margin-top:38px; }
-main.sub div.article article { border:1px solid #d6d6d6; }
-main.sub div.article article div.top { border-bottom:1px solid #d6d6d6; font-size:18px; position:relative; }
-main.sub div.article article div.top a.list { display:block; position:absolute; top:0; }
-main.sub div.article article div.top a.list i { color:#b2b2b2; display:block; font-size:40px; height:76px; line-height:76px; text-align:center; width:76px; }
-main.sub div.article article div.top strong.title { color:#000; border-left:1px solid #d6d6d6; border-right:1px solid #d6d6d6; display:block; height:76px; line-height:76px; margin-left:78px; margin-right:202px; overflow:hidden; padding-left:15px; padding-right:90px; position:relative; }
-main.sub div.article article div.top strong.title span.red { color:#dc2c34; font-weight:700; margin-right:5px; }
-main.sub div.article article div.top strong.title span.date { color:#888; font-size:14px; margin-right:10px; position:absolute; right:0; }
-main.sub div.article article div.top ul.sns            { font-size:0; height:76px; line-height:76px; position:absolute; right:0; top:0; text-align:center; width:200px; }
-main.sub div.article article div.top ul.sns li         { display:inline-block; margin:0 2px; vertical-align:middle; }
-main.sub div.article article div.top ul.sns li       a { background-image:url('../img/btn_noticeSns.png'); background-repeat:no-repeat; display:block; height:33px; width:33px; }
-main.sub div.article article div.top ul.sns li.fb    a { background-position:left top; }
-main.sub div.article article div.top ul.sns li.tt    a { background-position:-37px top; }
-main.sub div.article article div.top ul.sns li.kakao a { background-position:-74px top; }
-main.sub div.article article div.top ul.sns li.naver a { background-position:-111px top; }
-main.sub div.article div.contents { padding:30px; text-align:center; }
-
-main.sub div.article div.button { font-size:0; margin-top:20px; overflow:hidden; text-align:center; }
-main.sub div.article div.button a { color:#fff; display:inline-block; width:58px;  }
-main.sub div.article div.button a.prev,
-main.sub div.article div.button a.next  { background-color:#c2c2c2; }
-main.sub div.article div.button a.list  { background-color:#dc2c34; }
-main.sub div.article div.button a i { font-size:40px; height:58px; line-height:58px; }
-
-/***************
+/*************** 
     서브페이지 공통
 ***************/
 /* 인트로 */
@@ -158,7 +156,7 @@ main.sub ul.btn-type li.on a             { color:#dc2c34; font-weight:700; }
 /* 썸네일 게시판 목록 */
 main.sub ul.thumb-list                                 { margin-top:70px; overflow:hidden; }
 main.sub ul.thumb-list li                              { box-sizing:border-box; float:left; margin-bottom:20px; padding:0 10px; width:25%; }
-main.sub ul.thumb-list dl                              { border:1px solid #e1e1e1; overflow:hidden; position:relative; }
+main.sub ul.thumb-list dl                              { box-sizing:border-box; border:1px solid #e1e1e1; overflow:hidden; position:relative; }
 main.sub ul.thumb-list dl       dt                     { overflow:hidden; }
 main.sub ul.thumb-list dl       dt img                 { width:100%; height:100%; }
 main.sub ul.thumb-list dl       dd.title               { box-sizing:border-box; font-size:16px; line-height:34px; padding:18px; text-align:center; width:100%; }
@@ -169,6 +167,114 @@ main.sub ul.thumb-list dl       dd.link  a             { display:block; height:1
 main.sub ul.thumb-list dl       dd.link  a strong      { display:block; position:relative; top:50%; transform:translateY(-50%); -webkit-transform:translateY(-50%); -moz-transform:translateY(-50%); -ms-transform:translateY(-50%); }
 main.sub ul.thumb-list dl       dd.link  a strong i    { background-color:#fff; border-radius:30px; color:rgba(220,44,52,0.7); font-size:20px; padding:20px; }
 main.sub ul.thumb-list dl       dd.link  a strong span { color:#fff; display:block; font-weight:700; margin-top:10px; }
+
+/* 게시물 (article) */
+main.sub div.article                                        { margin-top:38px; }
+main.sub div.article article                                { border:1px solid #d6d6d6; }
+main.sub div.article article div.top                        { border-bottom:1px solid #d6d6d6; font-size:18px; position:relative; }
+main.sub div.article article div.top a.list                 { display:block; position:absolute; top:0; }
+main.sub div.article article div.top a.list i               { color:#b2b2b2; display:block; font-size:40px; height:76px; line-height:76px; text-align:center; width:76px; }
+main.sub div.article article div.top strong.title           { color:#000; border-left:1px solid #d6d6d6; border-right:1px solid #d6d6d6; display:block; height:76px; line-height:76px; margin-left:78px; margin-right:202px; overflow:hidden; padding-left:15px; padding-right:90px; position:relative; }
+main.sub div.article article div.top strong.title span.red  { color:#dc2c34; font-weight:700; margin-right:5px; }
+main.sub div.article article div.top strong.title span.date { color:#888; font-size:14px; margin-right:10px; position:absolute; right:0; }
+main.sub div.article article div.top ul.sns                 { font-size:0; height:76px; line-height:76px; position:absolute; right:0; top:0; text-align:center; width:200px; }
+main.sub div.article article div.top ul.sns li              { display:inline-block; margin:0 2px; vertical-align:middle; }
+main.sub div.article article div.top ul.sns li       a      { background-image:url('../img/btn_noticeSns.png'); background-repeat:no-repeat; display:block; height:33px; width:33px; }
+main.sub div.article article div.top ul.sns li.fb    a      { background-position:left top; }
+main.sub div.article article div.top ul.sns li.tt    a      { background-position:-37px top; }
+main.sub div.article article div.top ul.sns li.kakao a      { background-position:-74px top; }
+main.sub div.article article div.top ul.sns li.naver a      { background-position:-111px top; }
+main.sub div.article div.contents                           { font-size:16px; padding:30px; text-align:center; }
+main.sub div.article div.contents img                       {  }
+main.sub div.article div.contents p                         { margin:30px; }
+main.sub div.article div.contents strong                    { display:block; margin:30px; }
+main.sub div.article div.contents a                         { color:#039be5; font-weight:700; }
+main.sub div.article div.button                             { font-size:0; margin-top:20px; overflow:hidden; text-align:center; }
+main.sub div.article div.button a                           { color:#fff; display:inline-block; width:58px;  }
+main.sub div.article div.button a.prev,                 
+main.sub div.article div.button a.next                      { background-color:#c2c2c2; }
+main.sub div.article div.button a.list                      { background-color:#dc2c34; }
+main.sub div.article div.button a i                         { font-size:40px; height:58px; line-height:58px; }
+
+/* 소개 슬라이드 */
+main.sub div.presentation                                     { border:1px solid #c2c2c2; box-sizing:border-box; color:#666; height:600px; margin-top:50px; overflow:hidden; position:relative; }
+main.sub div.presentation article                             { float:left; height:100%; width:50%; }
+main.sub div.presentation article.left                        { position:relative; }
+main.sub div.presentation article.left  ul.slide li:after     { background-color:#dc2c34; border-radius:40px; content:'NEW'; color:#fff; display:block; font-weight:700; font-size:12px; height:40px; line-height:40px; position:absolute; right:10px; top:10px; text-align:center; width:40px; }
+main.sub div.presentation article.left  ul.slide li       img { width:100%; }
+main.sub div.presentation article.right                       { overflow:hidden; }
+main.sub div.presentation article.right dl                    { box-sizing:border-box; background-color:#fff; font-size:16px; float:left; height:50%; position:relative; width:50%; }
+main.sub div.presentation article.right dl:nth-child(1)       { border-right:1px solid #c2c2c2; border-bottom:1px solid #c2c2c2; }
+main.sub div.presentation article.right dl:nth-child(2)       { border-bottom:1px solid #c2c2c2; }
+main.sub div.presentation article.right dl:nth-child(3)       { border-right:1px solid #c2c2c2; }
+main.sub div.presentation article.right dl:after              { background-color:#dc2c34; border-radius:40px; content:'NEW'; color:#fff; display:block; font-weight:700; font-size:12px; height:40px; line-height:40px; position:absolute; right:10px; top:10px; text-align:center; width:40px; }
+main.sub div.presentation article.right dl       dt           { box-sizing:border-box; height:75%; overflow:hidden; padding-top:10px; text-align:center; }
+main.sub div.presentation article.right dl       dt img       { height:100%; }
+main.sub div.presentation article.right dl       dd           { box-sizing:border-box; height:25%; padding-top:10px; text-align:center; }
+main.sub div.presentation article.right dl       dd span      { display:block; font-size:14px; }
+
+/* 검색 영역 */
+main.sub div.search                    { background-color:#f7f7f7; margin-top:30px; padding:35px 20px; }
+main.sub div.search select,        
+main.sub div.search input,         
+main.sub div.search button             { vertical-align:top; }
+main.sub div.search select,        
+main.sub div.search input              { box-sizing:border-box; border:1px solid #c2c2c2; background-color:#fff; height:60px; }
+main.sub div.search select             { padding:0 10px; width:20%; }
+main.sub div.search input              { margin-left:10px; padding:0 10px; width:30%; }
+main.sub div.search i.fa-chevron-right { color:#dc2c34; font-size:40px; height:60px; line-height:60px; margin:0 20px; vertical-align:middle; }
+main.sub div.search button             { background-color:#dc2c34; color:#fff; cursor:pointer; margin-left:10px; }
+main.sub div.search button i.fa-search { font-size:30px; height:60px; line-height:60px; vertical-align:middle; width:60px; }
+
+/* 카드뷰 검색 결과 목록 */
+main.sub div.result-card                                              { margin-top:30px;text-align:right; }
+main.sub div.result-card div.top                                      { color:#666; font-size:16px; overflow:hidden; padding:20px 0;  }
+main.sub div.result-card div.top p.size                               { float:left; margin-left:10px; }
+main.sub div.result-card div.top span.order                           { margin-right:10px; }
+main.sub div.result-card div.top span.order a                         { margin-left:10px; }
+main.sub div.result-card div.top span.order a:hover                   { color:#dc2c34; }
+main.sub div.result-card ul.thumb-list,
+main.sub div.result-card ul.thumb-list                                { margin-top:0; }
+main.sub div.result-card ul.thumb-list li,                        
+main.sub div.result-card ul.thumb-list li                             { width:20%; }
+main.sub div.result-card ul.thumb-list li dl                          { margin:0 auto; width:230px; }
+main.sub div.result-card ul.thumb-list li dl dt                       { height:164px; overflow:hidden; }
+main.sub div.result-card ul.thumb-list li dl dd.title span:last-child { font-size:14px; }
+
+/* 게시물 상세보기 */
+main.sub div.article-info                           { box-sizing:border-box; margin-top:50px; overflow:hidden; padding:0 20px 0 40px; }
+main.sub div.article-info p.img                     { box-sizing:border-box; border:1px solid #e1e1e1; float:left; text-align:center; width:40%; }
+main.sub div.article-info p.img img                 { width:100%; }
+main.sub div.article-info table                     { border-top:2px solid #000; border-bottom:2px solid #000; border-spacing:0; float:right; width:55%; }
+main.sub div.article-info table tbody tr th.header,
+main.sub div.article-info table tbody tr td.info    { box-sizing:border-box; border-bottom:1px solid #e9e9e9; padding:24px; }
+main.sub div.article-info table tbody tr th.header  { background-color:#f7f7f7; font-size:16px; text-align:left; width:20%; }
+main.sub div.article-info table tbody tr td.info    { color:#666; padding:24px; width:80%; }
+
+/* 게시물 상세보기 > 영양성분 */
+main.sub div.ingredient                               { margin:70px auto 0 auto; overflow:hidden; width:760px; }
+main.sub div.ingredient table                         { border-spacing:0; border-top:2px solid #000; border-bottom:2px solid #000; width:100%; }
+main.sub div.ingredient table caption                 { color:#333; font-size:24px; margin-bottom:20px; }
+main.sub div.ingredient table colgroup col.ingredient { width:30%; }
+main.sub div.ingredient table colgroup col.content    { width:35%; }
+main.sub div.ingredient table colgroup col.reference  { width:35%; }
+main.sub div.ingredient table thead tr th,
+main.sub div.ingredient table tbody tr td             { border:1px solid #e9e9e9; }
+main.sub div.ingredient table thead tr th             { background-color:#f7f7f7; height:100px; }
+main.sub div.ingredient table tbody tr td             { height:42px; text-align:center; }
+main.sub div.ingredient table thead tr th.ingredient,
+main.sub div.ingredient table tbody tr td.ingredient  { border-left:0; }
+main.sub div.ingredient table tbody tr td.content     {}
+main.sub div.ingredient table thead tr th.reference,
+main.sub div.ingredient table tbody tr td.reference   { border-right:0; }
+main.sub div.ingredient p                             { font-size:14px; color:#666; margin-top:20px; }
+
+/* 게시물 상세보기 > 버튼 */
+main.sub div.article-button          { margin-top:80px; text-align:center; }
+main.sub div.article-button a        { box-sizing:border-box; display:inline-block; height:44px; line-height:44px; margin:20px 10px 0 10px; width:200px; }
+main.sub div.article-button a.mall   { border:2px solid #dc2c34; background-color:#dc2c34; color:#fff; font-size:14px; }
+main.sub div.article-button a.list   { border:2px solid #dcdcdc; color:#dc2c34; font-size:14px; }
+main.sub div.article-button a      i { margin-left:20px; }
 
 /*********
     회사소개
@@ -290,12 +396,12 @@ main.sub.strategy div.publishing img                 { margin:0 10px; }
 main.sub.strategy div.strategy-list                  { background-image:url('../img/bg_bottomBrn8.jpg'); background-position:center top; background-size:auto 100%; background-repeat:no-repeat; margin-top:60px; min-height:742px; overflow:hidden; }
 main.sub.strategy div.strategy-list div.list-img     { float:left; text-align:center; width:50%; }
 main.sub.strategy div.strategy-list div.list-img img { margin-top:264px; }
-main.sub.strategy div.strategy-list ul               { box-sizing:border-box; float:right; padding:60px 50px 0 50px; width:50%;}
+main.sub.strategy div.strategy-list ul               { box-sizing:border-box; float:right; padding:60px 50px 0 50px; width:50%; }
 main.sub.strategy div.strategy-list ul li            { margin-bottom:50px; }
 main.sub.strategy div.strategy-list ul li img        { float:left; }
 main.sub.strategy div.strategy-list ul li dl         { margin-left:100px; }
 main.sub.strategy div.strategy-list ul li dl dt      { color:#333; font-size:16px; font-weight:700; margin-bottom:10px; }
-main.sub.strategy div.strategy-list ul li dl dd      { color:#666;}
+main.sub.strategy div.strategy-list ul li dl dd      { color:#666; }
 
 /******************
     회사소개 > 인재채용
@@ -361,7 +467,6 @@ main.sub.kolas table.kolas-table td                                     { font-s
 main.sub.kolas table.kolas-table td.depth2                              { color:#333; }
 main.sub.kolas table.kolas-table td.depth3                              { color:#666; }
 
-
 /***********************
     회사소개 > 찾아오시는 길
 ***********************/
@@ -386,6 +491,12 @@ main.sub.directions div.list-map   div.right div.area-list dl.area dd.view-map b
 main.sub.directions div.list-map   div.right div.area-list dl.area dd.view-map button i   { color:#dc2c34; }
 main.sub.directions div.list-map   div.right div.area-list dl.area dd          span       { color:#333; font-size:14px; height:14px; line-height:14px; margin-right:10px; padding-right:10px; position:relative; width:36px; }
 main.sub.directions div.list-map   div.right div.area-list dl.area dd          span:after { background:#ccc; content:''; display:block; height:14px; line-height:14px; position:absolute; right:0; top:4px; width:1px;  }
+
+/************** 
+    쿠킹 & 스토리
+**************/
+/* 소개 슬라이드 */
+main.sub.cooking-story div.presentation article.right dl dt { padding:0; }
 
 /******************
     홍보센터 > 투자정보
@@ -454,7 +565,7 @@ main.sub.one-word div.agreement div.terms h6                         { font-size
 main.sub.one-word div.agreement div.terms p                          { margin-bottom:10px; }
 main.sub.one-word div.agreement div.terms ul                         { margin-bottom:16px; }
 main.sub.one-word div.agreement div.terms span                       { display:block; margin-top:60px; }
-main.sub.one-word div.agreement div.terms table                      {  margin-top:20px; margin-bottom:20px; width:100%; }
+main.sub.one-word div.agreement div.terms table                      { margin-top:20px; margin-bottom:20px; width:100%; }
 main.sub.one-word div.agreement div.terms table colgroup col.header1 { width:20%; }
 main.sub.one-word div.agreement div.terms table colgroup col.header2 { width:30%; }
 main.sub.one-word div.agreement div.terms table colgroup col.header3 { width:50%; }
@@ -493,6 +604,8 @@ main.sub.about-factory section.desire    { background:url('../img/bg_bottomBrn2.
 main.sub.about-factory section.desire h3,
 main.sub.about-factory section.desire p  { color:#000; }
 
+
+
 /*******************
     width 1200px 이하
 *******************/
@@ -501,16 +614,23 @@ main.sub.about-factory section.desire p  { color:#000; }
     main.sub.directions div.list-map div.left > div { margin:0 auto; width:838px !important; }
     main.sub.directions div.list-map div.right      { margin-top:30px; }
 
+    /***************
+        서브페이지 공통
+    ***************/
     /* 목록 */
     main.sub table.list { width:100%; }
+
+    /* 소개 슬라이드 */
+    main.sub div.presentation { height:500px; margin:50px auto 0 auto; width:1000px; }
+
+    /* 카드뷰 검색 결과 목록 */
+    main.sub div.result-card ul.thumb-list li { width:25%; }
 
     /********************
         회사소개 > (주)오뚜기
     *********************/
     /* 오뚜기이념 > 사시 */
     main.sub.goals div.goal-list div.goal h4 { margin-left:50%; }
-
-    
 }
 
 /*******************
@@ -521,18 +641,28 @@ main.sub.about-factory section.desire p  { color:#000; }
     main.sub div.box-contents.type1 div dl dd { font-size:14px; }
     main.sub div.box-contents.type2 div dl    { margin:0; }
 
-    /*****************
-        게시물 (article)
-    *****************/
-    main.sub div.article article div.top strong.title { padding-right:15px; }
+    /***************
+        서브페이지 공통
+    ***************/
+    /* 게시물 (article) */
+    main.sub div.article article div.top strong.title           { padding-right:15px; }
     main.sub div.article article div.top strong.title span.date { display:none; }
 
-    /* 인트로 */
+    /* 소개 슬라이드 */
+    main.sub div.presentation                          { height:400px; width:800px; }
+    main.sub div.presentation article.right dl dd      { font-size:14px; }
+    main.sub div.presentation article.right dl dd span { font-size:12px; }
+
+    /* 카드뷰 검색 결과 목록 */
+    main.sub div.result-card ul.thumb-list li { width:33.333%; }
+
+    /******** 
+        인트로 
+    ********/
     main.sub div.intro       { background-size:cover; height:182px; }
     main.sub div.intro h2    { font-size:16px; margin-top:40px; }
     main.sub div.intro dl dt { font-size:30px; }
     main.sub div.intro dl dd { position: absolute; left: -10000px; width: 0px; height: 0px; overflow: hidden; } 
-
 
     /********************
         회사소개 > (주)오뚜기
@@ -555,9 +685,8 @@ main.sub.about-factory section.desire p  { color:#000; }
     main.sub.strategy div.strategy-list ul               { float:none; width:100%; }
     main.sub.strategy div.strategy-list div.list-img     { background-image:url('../img/bg_bottomBrn8.jpg'); background-size:200% auto; height:auto; }
     main.sub.strategy div.strategy-list div.list-img img { margin:50px 0; padding:0; }
-    main.sub.strategy div.strategy-list ul { margin:60px auto; padding:0; width:600px; }
+    main.sub.strategy div.strategy-list ul               { margin:60px auto; padding:0; width:600px; }
     
-
     /******************
         회사소개 > 인재채용
     ******************/
@@ -594,6 +723,17 @@ main.sub.about-factory section.desire p  { color:#000; }
     width 900px 이하
 *******************/
 @media (max-width: 900px) {
+
+    /***************
+        서브페이지 공통
+    ***************/
+    /* 게시물 상세보기 */
+    main.sub div.article-info        { padding:0; }
+    main.sub div.article-info p.img,
+    main.sub div.article-info table  { float:none; }
+    main.sub div.article-info p.img  { width:50%; margin:0 auto; }
+    main.sub div.article-info table  { margin-top:30px; width:100%; }
+
     /********************
         회사소개 > (주)오뚜기
     *********************/
@@ -636,9 +776,10 @@ main.sub.about-factory section.desire p  { color:#000; }
     width 800px 이하
 ******************/
 @media (max-width: 800px)  {
-    /*****************
-        게시물 (article)
-    *****************/
+    /***************
+        서브페이지 공통
+    ***************/
+    /* 게시물 (article) */
     main.sub div.article article div.top strong.title { border-right:0; font-size:16px; margin-right:0; padding-right:15px; width:auto;  }
     main.sub div.article article div.top ul.sns       { border-top:1px solid #c2c2c2; position:static; width:100%; }
 
@@ -647,6 +788,22 @@ main.sub.about-factory section.desire p  { color:#000; }
     main.sub div.box-contents.type3 > p.img     { float:none; width:100%; }
     main.sub div.box-contents.type3 > p.img img { float:none; }
     main.sub div.box-contents.type3 div         { float:none; margin-top:20px; width:100%; }
+
+    /* 소개 슬라이드 */
+    main.sub div.presentation                              { border:1px solid #c2c2c2; height:auto; padding:0; width:300px; }
+    main.sub div.presentation article                      { float:none; height:300px; width:300px; }
+    main.sub div.presentation article.right dl             { display:none; height:100%; }
+    main.sub div.presentation article.right dl:first-child { border:0; display:block; width:100%; overflow:hidden; }
+
+    /* 검색 영역 */
+    main.sub div.search span       { display:block; margin-top:10px; width:100%; }
+    main.sub div.search span input { margin-left:0; width:70%; }
+
+    /* 카드뷰 검색 결과 목록 */
+    main.sub div.result-card ul.thumb-list li { width:50%; }
+
+    /* 게시물 상세보기 > 영양성분 */
+    main.sub div.ingredient { box-sizing:border-box; padding:70px 20px 0 20px; overflow:hidden; width:100%; }
 
     main.sub div.type dl { width:100%; }
 
@@ -660,9 +817,9 @@ main.sub.about-factory section.desire p  { color:#000; }
 
     /* 게시판 목록 */
     main.sub table.list       colgroup col.down { width:auto; }
-    main.sub table.list tbody td.down a { border:none; }
-    main.sub table.list tbody td.down a i { margin:0; }
-    main.sub table.list tbody td.down a span { display:none; }
+    main.sub table.list tbody td.down a         { border:none; }
+    main.sub table.list tbody td.down a i       { margin:0; }
+    main.sub table.list tbody td.down a span    { display:none; }
 
     /* 썸네일 게시판 목록 */
     main.sub ul.thumb-list li { width:50%; } 
@@ -703,12 +860,19 @@ main.sub.about-factory section.desire p  { color:#000; }
     width 640px 이하
 ******************/
 @media (max-width: 640px)  {
-    /*****************
-        게시물 (article)
-    *****************/
-    main.sub div.article article div.top strong.title { font-size:14px; }
+    /****************
+        서브 페이지 공통
+    ****************/
+    /* 게시물 (article) */
+    main.sub div.article article div.top strong.title           { font-size:14px; }
     main.sub div.article article div.top strong.title span.date { display:none; }
     
+    /* 검색영역 */
+    main.sub div.search select { width:30%; }
+
+    /* 카드뷰 검색 결과 목록 */
+    main.sub div.result-card ul.thumb-list li { width:100%; }
+
     main.sub div.box-contents         div         { float:none; height:auto; overflow:hidden; width:100%; }
     main.sub div.box-contents.type1 > p.img       { float:none; width:100%; }
     main.sub div.box-contents.type1   div   dl dt { font-size:18px; }
@@ -737,7 +901,6 @@ main.sub.about-factory section.desire p  { color:#000; }
     /* 중앙연구소 > KOLAS */
     main.sub.kolas div.box-contents.type2         { height:auto; }
     main.sub.kolas div.box-contents.type2 > p.img { overflow:hidden; position:relative; }
-
 
     /**********************
         회사소개 > 찾아오시는 길
