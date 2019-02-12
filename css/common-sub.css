@@ -157,8 +157,8 @@ main.sub ul.btn-type li.on a             { color:#dc2c34; font-weight:700; }
 main.sub ul.thumb-list                                 { margin-top:70px; overflow:hidden; }
 main.sub ul.thumb-list li                              { box-sizing:border-box; float:left; margin-bottom:20px; padding:0 10px; width:25%; }
 main.sub ul.thumb-list dl                              { box-sizing:border-box; border:1px solid #e1e1e1; overflow:hidden; position:relative; }
-main.sub ul.thumb-list dl       dt                     { overflow:hidden; }
-main.sub ul.thumb-list dl       dt img                 { width:100%; height:100%; }
+main.sub ul.thumb-list dl       dt                     { overflow:hidden; text-align:center; }
+main.sub ul.thumb-list dl       dt img                 { height:100%; }
 main.sub ul.thumb-list dl       dd.title               { box-sizing:border-box; font-size:16px; line-height:34px; padding:18px; text-align:center; width:100%; }
 main.sub ul.thumb-list dl       dd.title span          { display:block; height:32px; overflow:hidden; width:100%; }
 main.sub ul.thumb-list dl       dd.link                { background:rgba(220,44,52,0.7); height:100%; position:absolute; top:100%; transition:top 0.3s; width:100%; }

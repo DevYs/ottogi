@@ -7,6 +7,8 @@ var URL_PRODUCT_LIST = "https://devys.github.io/ottogi/js/product.json";
 var DEPTH_2_LIST = "";
 var PRODUCT_LIST = "";
 
+var ITEM_SIZE = 10;
+
 $(document).ready(function() {
 
 /*******************
@@ -29,6 +31,8 @@ $.ajax({
     type:'get',
     success:function(data) {
         PRODUCT_LIST = data;
+        $('div.result-card div.top p').text('총 ' + PRODUCT_LIST.length + '건의 제품이 있습니다.');
+        addProduct(0, 0, '');
     },
     error:function(e) {
         console.log(e);
@@ -57,22 +61,9 @@ $("#depth1").on("change", function() {
 });
 
 $('div.search button').on('click', function(e){
-    var tag = '<li><dl><dt><img src="{imageSrc}" alt="{imageAlt}"></dt><dd class="title"><span>{productName}</span><span>{type}</span></dd><dd class="link"><a href="../../page/product/product-article.html?idx={idx}"><strong><i class="fas fa-search"></i><span>자세히 보기</span></strong></a></dd></dl></li>';
-
     e.preventDefault();
 
-    $("div.result-card div.top p").text("총 541건의 제품이 있습니다.");
-    $("div.result-card ul.thumb-list").empty();
-
-    for(var i=0; i<PRODUCT_LIST.length; i++) {
-        var product = PRODUCT_LIST[i];
-        var temp = tag.replace('{imageSrc}', 'https://www.ottogi.co.kr' + product.imageSrc)
-                      .replace('{imageAlt}', product.imageAlt)
-                      .replace('{productName}', product.productName)
-                      .replace('{type}', product.type)
-                      .replace('{idx}', product.idx);
-        $("div.result-card ul.thumb-list").append(temp);
-    }
+    
 });
 
 
@@ -82,3 +73,18 @@ $('div.search button').on('click', function(e){
 /******
     함수
 ******/
+function addProduct(depth1, depth2, searchWord) {
+    var tag = '<li><dl><dt><img src="{imageSrc}" alt="{imageAlt}"></dt><dd class="title"><span>{productName}</span><span>{type}</span></dd><dd class="link"><a href="../../page/product/product-article.html?idx={idx}"><strong><i class="fas fa-search"></i><span>자세히 보기</span></strong></a></dd></dl></li>';
+
+    $("div.result-card ul.thumb-list").empty();
+
+    for(var i=0; i<ITEM_SIZE; i++) {
+        var product = PRODUCT_LIST[i];
+        var temp = tag.replace('{imageSrc}', 'https://www.ottogi.co.kr' + product.imageSrc)
+                      .replace('{imageAlt}', product.imageAlt)
+                      .replace('{productName}', product.productName)
+                      .replace('{type}', product.type)
+                      .replace('{idx}', product.idx);
+        $("div.result-card ul.thumb-list").append(temp);
+    }
+}
