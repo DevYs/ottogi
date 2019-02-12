@@ -3,7 +3,9 @@
     변수
 ******/
 var URL_CATEGORY_DEPTH2 = "https://devys.github.io/ottogi/js/category.json";
+var URL_PRODUCT_LIST = "https://devys.github.io/ottogi/js/product.json";
 var DEPTH_2_LIST = "";
+var PRODUCT_LIST = "";
 
 $(document).ready(function() {
 
@@ -15,6 +17,18 @@ $.ajax({
     type:'get',
     success:function(data) {
         DEPTH_2_LIST = data;
+    },
+    error:function(e) {
+        console.log(e);
+    }
+
+});
+
+$.ajax({
+    url:URL_PRODUCT_LIST,
+    type:'get',
+    success:function(data) {
+        PRODUCT_LIST = data;
     },
     error:function(e) {
         console.log(e);
@@ -42,7 +56,27 @@ $("#depth1").on("change", function() {
     }
 });
 
+$('div.search button').on('click', function(e){
+    var tag = '<li><dl><dt><img src="{imageSrc}" alt="{imageAlt}"></dt><dd class="title"><span>{productName}</span><span>{type}</span></dd><dd class="link"><a href="../../page/product/product-article.html?idx={idx}"><strong><i class="fas fa-search"></i><span>자세히 보기</span></strong></a></dd></dl></li>';
 
+    e.preventDefault();
+
+    $("div.result-card div.top p").text("총 541건의 제품이 있습니다.");
+    $("div.result-card ul.thumb-list").empty();
+
+    for(var i=0; i<PRODUCT_LIST.length; i++) {
+        var product = PRODUCT_LIST[i];
+        var temp = tag.replace('{imageSrc}', 'https://www.ottogi.co.kr' + product.imageSrc)
+                      .replace('{imageAlt}', product.imageAlt)
+                      .replace('{productName}', product.productName)
+                      .replace('{type}', product.type)
+                      .replace('{idx}', product.idx);
+        $("div.result-card ul.thumb-list").append(temp);
+    }
+});
+
+
+// $(document).ready() 종료
 });
 
 /******
