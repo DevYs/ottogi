@@ -91,37 +91,6 @@
                 <div class="container">
                     <form action="#" method="post">
                         <fieldset>
-                            <select class="depth1" id="depth1" name="depth1">
-                                <option value="">전체</option>
-                                <option value="1" >분말/건조식품</option>
-                                <option value="2" >조미소스/식품</option>
-                                <option value="3" >레토르트/간편식</option>
-                                <option value="4" >곡류가공식품</option>
-                                <option value="5" >농/축/수산식품</option>
-                                <option value="6" >다류</option>
-                                <option value="7" >식용유지</option>
-                                <option value="8" >향신료류</option>
-                                <option value="9" >라면류</option>
-                                <option value="10" >면류</option>
-                                <option value="11" >냉장/냉동식품</option>
-                            </select>             
-                            <i class="fas fa-chevron-right"></i>
-                            <select class="depth2" id="depth2" name="depth2">
-                                <option value="">선택하세요</option>
-                                <option value="19">떡</option>
-                                <option value="7">찌개/전골</option>
-                                <option value="8">조림/볶음</option>
-                                <option value="9">구이</option>
-                                <option value="10">튀김/부침</option>
-                                <option value="11">찜</option>
-                                <option value="12">생채/무침</option>
-                                <option value="13">면</option>
-                                <option value="14">밥/죽</option>
-                                <option value="15">국/탕</option>
-                                <option value="16">쌈</option>
-                                <option value="17">김치/장아찌</option>
-                                <option value="18">음료/한과</option>
-                            </select>
                             <span>
                                 <input type="text" id="search-word" name="search-word" placeholder="오뚜기 제품을 검색하실 수 있습니다." />
                                 <button><i class="fas fa-search"></i></button>        
@@ -135,15 +104,11 @@
             <div class="result-card">
                 <div class="top container">
                     <p class="size">총 541건의 제품이 있습니다.</p>
-                    <span class="order">
-                        <a href="#">최신순</a>
-                        <a href="#">조회순</a>
-                    </span>
                 </div>
                 
                 <!-- 썸네일 게시판 목록 -->
                 <ul class="thumb-list container">
-                    <li>
+                <!-- <li>
                         <dl>
                             <dt><img src="../../img/강황야채피클.jpg" alt="강황야채피클양식샐러드"></dt>
                             <dd class="title"><span>강황야채피클</span><span>양식 &gt; 샐러드</span></dd>
@@ -212,7 +177,7 @@
                             <dd class="title"><span>강황야채피클</span><span>양식 &gt; 샐러드</span></dd>
                             <dd class="link"><a href="../../page/product/product-article.html"><strong><i class="fas fa-search"></i><span>자세히 보기</span></strong></a></dd>
                         </dl>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
@@ -220,14 +185,14 @@
             <ul class="page-no">
                 <li class="first"><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
                 <li class="prev"><a href="#"><i class="fas fa-angle-left"></i></a></li>
-                <li><a href="#">1</a></li>
-                <li><a class="on" href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
+                <li class="pageNum"><a href="#">1</a></li>
+                <li class="pageNum"><a class="on" href="#">2</a></li>
+                <li class="pageNum"><a href="#">3</a></li>
+                <li class="pageNum"><a href="#">4</a></li>
+                <li class="pageNum"><a href="#">5</a></li>
+                <li class="pageNum"><a href="#">6</a></li>
                 <li class="next"><a href="#"><i class="fas fa-angle-right"></i></a></li>
-                <li class="prev"><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
+                <li class="last"><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
             </ul>
 
         </main>

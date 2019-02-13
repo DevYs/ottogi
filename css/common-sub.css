@@ -138,11 +138,11 @@ main.sub div.list             table tbody    td.down a:hover   { color:#dc2c34; 
 main.sub div.list             table tbody    td.down a       i { color:#dc2c34; margin-left:10px; }
 
 /* 페이징 */
-main.sub ul.page-no         { margin-top:55px; text-align:center; }
-main.sub ul.page-no li      { display:inline-block; }
-main.sub ul.page-no li a    { color:#666; display:block; font-size:15px; height:30px; line-height:30px; width:30px; }
-main.sub ul.page-no li a.on { color:#fff; background:#dc2c34; border-radius:30px; }
-main.sub ul.page-no li a i  { color:#666; }
+main.sub ul.page-no           { margin-top:55px; text-align:center; }
+main.sub ul.page-no li        { display:inline-block; }
+main.sub ul.page-no li    a   { color:#666; display:block; font-size:15px; height:30px; line-height:30px; width:30px; }
+main.sub ul.page-no li.on a   { color:#fff; background:#dc2c34; border-radius:30px; }
+main.sub ul.page-no li    a i { color:#666; }
 
 /* 분류버튼 */
 main.sub ul.btn-type                     { margin-top:12px; text-align:center; }
@@ -214,17 +214,18 @@ main.sub div.presentation article.right dl       dd           { box-sizing:borde
 main.sub div.presentation article.right dl       dd span      { display:block; font-size:14px; }
 
 /* 검색 영역 */
-main.sub div.search                    { background-color:#f7f7f7; margin-top:30px; padding:35px 20px; }
-main.sub div.search select,        
-main.sub div.search input,         
-main.sub div.search button             { vertical-align:top; }
-main.sub div.search select,        
-main.sub div.search input              { box-sizing:border-box; border:1px solid #c2c2c2; background-color:#fff; height:60px; }
-main.sub div.search select             { padding:0 10px; width:20%; }
-main.sub div.search input              { margin-left:10px; padding:0 10px; width:30%; }
-main.sub div.search i.fa-chevron-right { color:#dc2c34; font-size:40px; height:60px; line-height:60px; margin:0 20px; vertical-align:middle; }
-main.sub div.search button             { background-color:#dc2c34; color:#fff; cursor:pointer; margin-left:10px; }
-main.sub div.search button i.fa-search { font-size:30px; height:60px; line-height:60px; vertical-align:middle; width:60px; }
+main.sub         div.search                    { background-color:#f7f7f7; margin-top:30px; padding:35px 20px; }
+main.sub.product div.search                    { text-align:center; }
+main.sub         div.search select,        
+main.sub         div.search input,         
+main.sub         div.search button             { vertical-align:top; }
+main.sub         div.search select,        
+main.sub         div.search input              { box-sizing:border-box; border:1px solid #c2c2c2; background-color:#fff; height:60px; }
+main.sub         div.search select             { padding:0 10px; width:20%; }
+main.sub         div.search input              { margin-left:10px; padding:0 10px; width:30%; }
+main.sub         div.search i.fa-chevron-right { color:#dc2c34; font-size:40px; height:60px; line-height:60px; margin:0 20px; vertical-align:middle; }
+main.sub         div.search button             { background-color:#dc2c34; color:#fff; cursor:pointer; margin-left:10px; }
+main.sub         div.search button i.fa-search { font-size:30px; height:60px; line-height:60px; vertical-align:middle; width:60px; }
 
 /* 카드뷰 검색 결과 목록 */
 main.sub div.result-card                                              { margin-top:30px;text-align:right; }
